@@ -58,8 +58,7 @@ _known_constants_math = {
     'Pi': 'pi',
     'E': 'e',
     'Infinity': 'inf',
-    'NaN': 'nan',
-    'ComplexInfinity': 'nan'
+    'NaN': 'nan'
 }
 
 def _print_known_func(self, expr):
@@ -195,7 +194,7 @@ class AbstractPythonCodePrinter(CodePrinter):
         return "float('-inf')"
 
     def _print_ComplexInfinity(self, expr):
-        return self._print_NaN(expr)
+        return self._print_NaN(S.NaN)
 
     def _print_Mod(self, expr):
         PREC = precedence(expr)
